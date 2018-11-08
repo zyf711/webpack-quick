@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 192.168.1.104 --open --history-api-fallback --config webpack.config.js",
+    "dev": "webpack-dev-server --host 192.168.10.122 --open --history-api-fallback --config webpack.config.js",
     "build": "webpack --progress --hide-modules --config webpack.prod.config.js",
     "start": "concurrently \"npm run dev\" \"node proxy.js\""
   },
@@ -15,6 +15,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "concurrently": "^4.0.1",
     "css-loader": "^1.0.1",
