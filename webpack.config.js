@@ -24,6 +24,12 @@ const config = {
 							'vue-style-loader',
 							'mini-css-extract-plugin',
 							'css-loader'
+						],
+						less:[
+							'vue-style-loader',
+							'mini-css-extract-plugin',
+							'css-loader',
+							'less-loader'
 						]
 					}
 				}
@@ -43,6 +49,15 @@ const config = {
 					MiniCssExtractPlugin.loader,
 					// 'style-loader',
 					'css-loader'
+				]
+			  },
+			{
+			    test: /\.less$/,
+			    use: [ //数组形式的话，编译是从后往前。
+					MiniCssExtractPlugin.loader,
+					// 'style-loader',
+					'css-loader',
+					'less-loader'
 				]
       		},
 			{

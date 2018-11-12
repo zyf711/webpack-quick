@@ -17,7 +17,6 @@
 	// 导入组件
 	import vTitle from './components/title.vue';
 	import vButton from './components/button.vue';
-	import './style.css';
 	import $ from './libs/util';
 
 	export default{
@@ -37,11 +36,15 @@
 	}
 </script>
 <!-- scoped表示当前css只在这个组件里有效 在chrome调试工具会看到元素上有一窜串内容，就是因为有scoped-->
-<!-- 可结合预编译一起使用，比如less -->
-<!-- <style lang="less"></style> -->
-<style scoped>
+<style scoped lang="less">
 	div{
 		color:red;
 		font-size: 24px;
+	}
+	p{
+		background: #333;
+		img{
+			height: 200px;
+		}
 	}
 </style>
