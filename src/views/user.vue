@@ -1,5 +1,8 @@
 <template>
+<div>
 	<div class="abc">{{ $route.params.id }}</div>
+	<i class="icon icon-c"></i>
+</div>
 </template>
 <script>
 	export default{

@@ -6,6 +6,7 @@ import moduleA from './moduleA' //vuex中modules分割出的模块
 import VueBus from './vue-bus' //使用插件代替vuex解决通讯
 
 import './style.less';
+import './images/sprites/sprite.css';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);

@@ -2,6 +2,7 @@
 	<div>
 	<div class="abc">介绍页</div>
 	<button @click="handleRouter">跳转到user123456</button>
+	<i class="icon icon-b"></i>
 	</div>
 </template>
 <script>

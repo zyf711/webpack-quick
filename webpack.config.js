@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader'); //vue-loader，15的版本需要再添加plugin的配置
+const SpritesmithPlugin = require('webpack-spritesmith') //css雪碧图
 
 const config = {
 	mode: 'development', // 不设置默认production
@@ -63,14 +64,34 @@ const config = {
 			{
             	test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
             	loader:'url-loader?limit=1024' //文件小于1k就以base64形式加载
-            }
+			}
 		]
 	},
 	plugins: [
 	    //重命名提取后的css文件
 		new MiniCssExtractPlugin('main.css'),
 		//vue-loader，15的版本需要再添加plugin的配置
-    	new VueLoaderPlugin() 
+		new VueLoaderPlugin(),
+		new SpritesmithPlugin({
+			//设置源icons,即icon的路径，必选项
+			src: {
+			  cwd: path.resolve(__dirname, 'src/images/icons'),
+			  glob: '*.png'
+			},
+			//设置导出的sprite图及对应的样式文件，必选项
+			target: {
+			  image: path.resolve(__dirname, 'src/images/sprites/sprite.png'),
+			  css: path.resolve(__dirname, 'src/images/sprites/sprite.css')  //也可以为less, sass文件，需要先安装相关loader
+			},
+			//设置sprite.png的引用格式
+			apiOptions: {
+			  cssImageRef: './sprite.png'  //cssImageRef为必选项
+			},
+			//配置spritesmith选项，非必选
+			spritesmithOptions: {
+			  algorithm: 'top-down'//设置图标的排列方式
+			}
+		  })
 	]
 };
 

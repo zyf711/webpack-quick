@@ -1,9 +1,9 @@
 <!-- 可以用jade写 <template lang="jade"></template> -->
 <template>
 	<div>
-		<router-view></router-view>
 		<v-title title="Vue组件化"></v-title>
 		<v-button @click="handleClick">点击按钮axios加载代理部分内容到alert</v-button>
+		<router-view></router-view>
 		<p>
 			<img src="./images/image.png" style="width:200px;" alt="">
 			<img src="./images/123.jpg" style="width:200px;" alt="">

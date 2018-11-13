@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<div>首页</div>
+		<i class="icon icon-a"></i>
 		{{ count }}
 		<button @click="handleIncrement">+1</button>
 		<button @click="handleDecrease">-10</button>
